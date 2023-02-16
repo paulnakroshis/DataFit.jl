@@ -1,4 +1,6 @@
 # DataFit.jl
+## 16 Feb 2023: Not ready for use yet
+### In the docs folder is a notebook used for development.
 
 The goal of this Julia package is to allow the user to fit a data set with one independent variable to a model with N parameters, and to do so while taking accound the uncertainties in the independent and dependent 
 variables. 
