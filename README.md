@@ -2,7 +2,9 @@
 ## 16 Feb 2023: Not ready for use yet
 ### In the docs folder is a notebook used for development.
 
-The goal of this Julia package is to allow the user to fit a data set with one independent variable to a model with N parameters, and to do so while taking accound the uncertainties in the independent and dependent 
+The goal of this Julia package is to allow the user to fit a data set with 
+one independent variable to a model with N parameters, and to do so while 
+taking accound the uncertainties in the independent and dependent 
 variables. 
 
 I'll use a time series as an example to frame the discussion. 
@@ -20,4 +22,4 @@ uncertainty by creating M bootstrapped data sets and refitting to each. The
 uncertainty in the N parameters is determined by the standard deviation of 
 the M bootstrapped data set parameter values. 
 
-Then, this code is used to plot the data along with error bars and confidence band(s)
+Then, this code is used to plot the data along with error bars and confidence band(s).
