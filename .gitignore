@@ -1,3 +1,8 @@
 
 .DS_Store
 docs/.ipynb_checkpoints/DataFitting-checkpoint.ipynb
+DataFit_draft/docs/.ipynb_checkpoints/DataFitting-checkpoint.ipynb
+DataFit_draft/src/.ipynb_checkpoints/DataFit-checkpoint.jl
+src/.ipynb_checkpoints/DataFit-checkpoint.jl
+src/.ipynb_checkpoints/fit-checkpoint.jl
+src/.ipynb_checkpoints/sigma_model-checkpoint.jl
