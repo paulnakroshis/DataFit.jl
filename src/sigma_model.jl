@@ -34,7 +34,7 @@ Comments on method:
 
 """
 function Δp(model, tᵢ, p, σₚ, α)
-    ∂pᵢ = zeros(length(p))
+    ∂pᵢ = zeros(length(p))clear
     ϵij = α*Diagonal(ones(length(p))) 
     p₊ = Matrix{Float64}(undef, length(p), length(p)) 
     p₋ = Matrix{Float64}(undef, length(p), length(p))

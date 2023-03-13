@@ -115,14 +115,35 @@ Bootstrap fitting of data to a model, returning the mean and standard deviation 
 
 # Arguments
 - `model`: A function that takes a time vector and a parameter vector as input and returns a predicted output vector.
+
 - `tdata`: A vector of the observed time points.
+
 - `δt`: A vector of the uncertainties in the observed time points.
+
 - `ydata`: A vector of the observed output values.
+
 - `δy`: A vector of the uncertainties in the observed output values.
+
 - `p0`: A vector of initial parameter values for the model.
+
 - `m_samples`: The number of bootstrap samples to generate.
-- `nΣt`: A scalar representing what multiple of δt you want to use for the width of the Gaussian used to generate fake t data. This should be set to 1.0 for regularly spaced data-- otherwise the time series will not be time ordered. For irregularly spaced data, it is possible to choose values larger than 1.0. In any case, there is a check built into the function to warn the user if the time series data is unordered.
-- `nΣy`: A scalar representing what multiple of δy you want to use for the width of the Gaussian used to generate fake y data. Default value=1.0.
+
+- `nΣt`: A scalar representing what multiple of δt you want to use 
+   for the width of the Gaussian used to generate fake t data. 
+   This should be set to 1.0 for regularly spaced data -- otherwise 
+   the time series will not be time ordered. For irregularly spaced data, 
+   it is possible to choose values larger than 1.0. In any case, there is
+   a check built into the function to warn the user if the time series data is unordered.
+   
+- `nΣy`: A scalar representing what multiple of δy you want to use for the 
+   width of the Gaussian used to generate fake y data. Default value=1.0.
+   Unlike the time data, this value may be set to be more than 1. Recall that
+   the probability of data being within +-Nσ of the best fit is
+   1σ = 68.27%
+   2σ = 95.45%
+   3σ = 99.73%
+   4σ = 99.9937%
+   5σ = 99.99994%
 
 # Returns
 - `p`: A vector of the mean values of the fit parameters across all bootstrap samples.
