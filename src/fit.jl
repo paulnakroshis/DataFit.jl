@@ -36,7 +36,9 @@ Returns the minimum spacing between elements of a vector `v`. If `full_stats` is
 returns the minimum, maximum, mean, and standard deviation of the spacing between elements of `v`.
 The default is `false`, and then the function only returns the minimum spacing.
 
-An error will be thrown if the vector is not strictly increasing. The reason for this test is that the procedure used in `bootstrap_fit` requires that the data be time ordered; if the user creates a bootstrapped data set that violates this requirement, I want to know about it.
+An error will be thrown if the vector is not strictly increasing. The reason for this test is that 
+the procedure used in `bootstrap_fit` requires that the data be time ordered; if the user creates a 
+bootstrapped data set that violates this requirement, I want to know about it.
 
 # Arguments
 - `v::Vector`: Vector of data to be analyzed.
@@ -67,7 +69,11 @@ julia> spacing_info(t, true)
 julia> t = [1.0, 2.0, 3.0, 3.5, 3.4, 5.0, 6.1, 7.4, 7.6];
 
 julia> spacing_info(t)
-ERROR: Vector must be strictly increasing
+ERROR: Vector must be strictly increasing. Your generated 
+bootstrap array is not time ordered. Try reducing the number 
+of standard deviations used in your gaussian sample. For regularly 
+spaced time samples the value of nΣt should be 1.0; 
+did you override this?
 Stacktrace:
  [1] error(s::String)
    @ Base ./error.jl:35
@@ -85,11 +91,13 @@ function spacing_info(v::Vector, full_stats::Bool=false)
     if any(Δt .<= 0)
         error("Vector must be strictly increasing. 
               Your generated bootstrap array is not time ordered. 
-              try reducing the number of standard deviations used in 
+              Try reducing the number of standard deviations used in 
               your gaussian sample. For regularly spaced time samples
               the value of nΣt should be 1.0; did you override this?")
     end
+    
     Δtmin = minimum(Δt)
+    
     if full_stats
         Δtmax = maximum(Δt)
         Δtmean = mean(Δt)
