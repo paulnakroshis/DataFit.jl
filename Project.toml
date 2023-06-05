@@ -3,6 +3,15 @@ uuid = "980c4361-34be-4910-ad0a-13124148d1e3"
 authors = ["Paul Nakroshis <pauln@maine.edu>"]
 version = "1.0.0-DEV"
 
+[deps]
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+LsqFit = "2fda8390-95c7-5789-9bda-21331edee243"
+Measures = "442fdcdd-2543-5da2-b0f3-8c86c306513e"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Smoothing = "cf09d348-ed9f-4043-bc55-1768af2a262b"
+
 [compat]
 julia = "1.9"
 
