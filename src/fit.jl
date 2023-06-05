@@ -74,15 +74,6 @@ bootstrap array is not time ordered. Try reducing the number
 of standard deviations used in your gaussian sample. For regularly 
 spaced time samples the value of nΣt should be 1.0; 
 did you override this?
-Stacktrace:
- [1] error(s::String)
-   @ Base ./error.jl:35
- [2] spacing_info(v::Vector{Float64}, full_stats::Bool)
-   @ Main ~/Dropbox/DocumentsF/Github/DataFit.jl/src/fit.jl:32
- [3] spacing_info(v::Vector{Float64})
-   @ Main ~/Dropbox/DocumentsF/Github/DataFit.jl/src/fit.jl:30
- [4] top-level scope
-   @ REPL[41]:1
 ```
 """
 # analyze spacing bewteen elements of a Vector
